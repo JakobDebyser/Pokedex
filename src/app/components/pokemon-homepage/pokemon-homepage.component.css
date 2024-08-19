@@ -1,0 +1,82 @@
+.grid-layout {
+  padding: 50px 0;
+  display: grid;
+  max-width: 100%;
+  grid-gap: 60px;
+  margin: 0 auto;
+  width: 95%;
+  grid-auto-rows: 200px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+.pokemon-card {
+  min-width: 180px;
+  max-width: 400px;
+  
+  color: white;
+  background-color: rgb(35, 35, 35);
+  display: inline-block;
+  border-radius: 10px;
+}
+.background-image {
+  background-color: #616161;
+  height: auto;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.card-title{
+  display: inline-flex;
+}
+.id {
+  font-size: 22px;
+  margin-left: 10px;
+  text-align: right;
+  display: inline-flex;
+}
+.content {
+  margin: 0;
+}
+.types {
+  display: inline-flex;
+  margin: 15px 15px 15px 10px;
+  padding: 5px 10px;
+  text-shadow: black 1px 1px 1px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.navbar {
+  background-color: rgb(184, 28, 28);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.filter-component {
+  margin-left: 50px;
+  display: inline-block;
+}
+.filter-component label{
+  display: inline-block;
+  
+  width: 150px;
+  
+}
+
+.form-field {
+  width: auto;
+  margin-top: 8px;
+  ;
+}
+.select {
+  text-transform: capitalize;
+}
+.additional-selection {
+  text-transform: lowercase;
+  opacity: 0.75;
+  font-size: 0.75em;
+}
+.background-image img{
+  transform: scale(1.1);
+  
+}

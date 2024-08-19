@@ -1,0 +1,52 @@
+<div class="navbar">
+  <div class="filter-component">
+    <div class="form-field">
+      <label class="filter" for="gen-selector">Filter by generation</label>
+      <select id="gen-selector"[(ngModel)]="selectedGeneration" (ngModelChange)="onGenerationSelected()">
+        <option *ngFor="let generation of generations" [value]="generation.url">
+          {{ generation.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <div class="filter-component">
+    <div class="form-field">
+      <label class="filter" for="type-selector">Filter by Type</label>
+      <select id="type-selector" [(ngModel)]="selectedType" (ngModelChange)="onTypeSelected()">
+        <option >None</option>
+        <option *ngFor="let type of types" [value]="type.name">
+          {{ type.name | titlecase }}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div style="text-align: center">
+  <div class="grid-layout" *ngIf="pokemons">
+    <div *ngFor="let pokemon of filteredPokemons">
+      <div class="pokemon-card" *ngIf="pokemon.details">
+        <div class="card-title">{{ pokemon.name }}</div>
+        <div class="id">{{ pokemon.id }}</div>
+        <div class="background-image">
+          <img
+            image
+            src="{{ pokemon.details.sprites.front_default }}  "
+            alt="photo of {{ pokemon.name }} "
+          />
+        </div>
+        <div class="content">
+          <div style="display: block">
+            <div
+              *ngFor="let type of pokemon.details.types"
+              class="types"
+              [style.background]="getTypeColours(type.type.name)"
+            >
+              {{ type.type.name }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
